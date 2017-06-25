@@ -34,7 +34,7 @@ def plot_chain(game_folder,pkmns):
     plt.show()        
     
 def plot_sprite(sprite,type_1=1,type_2=None,pred=None,type_dict = load_type_dict(),save=None,save_path="./classification"):
-    #Definindo as dimensões do Grid
+
     if pred:
         grid_rows = 2
         grid_cols = 2
@@ -55,11 +55,11 @@ def plot_sprite(sprite,type_1=1,type_2=None,pred=None,type_dict = load_type_dict
     fig = plt.figure(figsize=figsize)
     gs = gridspec.GridSpec(grid_rows,grid_cols, height_ratios = (10,1), width_ratios = width_ratios)
     
-    #Plotando o sprite do Pokemon
+    #Plot Pokemon sprites
     ax_sprite = plt.subplot(gs[sprite_grid])
     ax_sprite.imshow(color.hsv2rgb(sprite))    
     
-    #Plotando o tipo verdadeiro do pokemon
+    #Plot type of pokemon
     ax_type = plt.subplot(gs[type_grid])
     plt.axis("off")
     
@@ -86,7 +86,7 @@ def plot_sprite(sprite,type_1=1,type_2=None,pred=None,type_dict = load_type_dict
                     fontsize=12, ha='center', va='center')       
 
     
-    #Plotando as previsões
+    # Plot predictions
     if pred:
         ax_pred = plt.subplot(gs[pred_grid])
         plt.axis("off")
